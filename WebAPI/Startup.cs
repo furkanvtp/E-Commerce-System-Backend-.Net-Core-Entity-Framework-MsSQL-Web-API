@@ -31,11 +31,12 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //Autofac,Ninject,CastleWindsor,StructureMap,LightInject,DryInject -->IoC Container
-            //AOP --> bütün metodları loglamak -- Autofac AOP imkanı sunuyor
+            //AOP --> bütün metodları loglamak -- Autofac AOP imkanı sunuyor onu kullanıcaz
+            //Postsharp -- ücretli 
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>();
-            services.AddSingleton<IProductDal, EfProductDal>();//IProductDal çağırdığında
-                                                               //EfProductDal new'le arka planda
+            //services.AddSingleton<IProductService, ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();//IProductDal çağırdığında
+            //                                                   //EfProductDal new'le arka planda
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });

@@ -18,11 +18,11 @@ namespace WebAPI.Controllers
         //Loose coupled -- gevşek bağlılık
         //naming convention
         //IoC Container -- Inversion of Control
-        IProductService _productService;
+        IProductService _productService; //interface'ler referans tutucudur.
 
         public ProductsController(IProductService productService)
         {
-            _productService = productService;
+            _productService = productService; 
         }
 
         [HttpGet("getall")]
